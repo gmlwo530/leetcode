@@ -6,49 +6,47 @@ class ListNode:
 
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        list_node = None
-
-        q = 0
+        l1_list = []
+        l2_list = []
+        s = 0
 
         while True:
+            if l1 is not None:
+                l1_list.append(l1.val)
+                l1 = l1.next
+
+            if l2 is not None:
+                l2_list.append(l2.val)
+                l2 = l2.next
+
             if l1 is None and l2 is None:
-                if q > 0:
-                    list_node = ListNode(val=q, next=list_node)
-                    q = 0
-                    continue
-                else:
-                    break
+                break
 
-            if l1 is None:
-                l1_val = 0
+        for idx, ele in enumerate(l1_list):
+            s += ele * (10 ** idx)
+
+        for idx, ele in enumerate(l2_list):
+            s += ele * (10 ** idx)
+
+        if s == 0:
+            return ListNode(val=0, next=None)
+
+        len_s = 0
+        list_node = None
+
+        while True:
+            if s // (10 ** len_s) < 1:
+                break
+            len_s += 1
+
+        for i in reversed(range(len_s)):
+            if 10 ** i > s:
+                val = 0
             else:
-                l1_val = l1.val
-
-            if l2 is None:
-                l2_val = 0
-            else:
-                l2_val = l2.val
-
-            val = (l1_val + l2_val + q) % 10
+                val = s // (10 ** i)
 
             list_node = ListNode(val=val, next=list_node)
 
-            q = (l1_val + l2_val + q) // 10
+            s -= val * (10 ** i)
 
-            l1 = l1.next if l1 else None
-            l2 = l2.next if l2 else None
-
-        return self.reverse_linked_list(list_node)
-
-    def reverse_linked_list(self, list_node: ListNode) -> ListNode:
-        previous = None
-        current = list_node
-        following = list_node
-
-        while current is not None:
-            following = list_node.next
-            current.next = previous
-            previous = current
-            current = following
-
-        return previous
+        return list_node
