@@ -1,10 +1,10 @@
 {
-    "python.pythonPath": "/Users/maru/.pyenv/versions/3.8.1/bin/python",
+    "python.pythonPath": "/Users/choiheejae/.pyenv/versions/3.8.9/bin/python",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length=120",
-        "--ignore=E203"
+        "--ignore=E203,E741",
     ],
     "python.linting.enabled": true,
     "editor.formatOnSave": true,
