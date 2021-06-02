@@ -9,3 +9,4 @@
 |5  |[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)|Medium|[longest_palindromic_substring.py](solutions/longest_palindromic_substring.py)|
 |7  |[Reverse Integer](https://leetcode.com/problems/reverse-integer/)|Easy|[reverse_integer.py](solutions/reverse_integer.py)|
 |9  |[Palindrome Number](https://leetcode.com/problems/palindrome-number/)|Easy|[palindrome_number.py](solutions/palindrome_number.py)|
+|1866|[Number of Ways to Rearrange Sticks With K Sticks Visible](https://leetcode.com/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/)|Hard|[1866.py](solutions/1866.py)|
